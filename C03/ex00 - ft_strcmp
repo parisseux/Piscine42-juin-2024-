@@ -1,0 +1,47 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/25 11:08:53 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/06/25 19:33:06 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strcmp(const char *s1, const char *s2)
+{
+	int	i;
+
+	i = 0;
+	while (s1[i] || s2[i])
+	{
+		if (s1[i] == s2[i])
+			i++;
+		else
+		{
+			if (s1[i] != s2[i])
+				return (s1[i] - s2[i]);
+		}
+	}
+	return (0);
+}
+// int	main(void)
+// {
+// 	char a[] = "abcd";
+// 	char b[] = "acbd";
+// 	char c[] = "abcd";
+
+// 	printf("%d", strcmp(a, b));
+// 	printf("\n");
+// 	printf("%d", strcmp(a, c));
+// 	printf("\n");
+// 	printf("%d", ft_strcmp(a, b));
+// 	printf("\n");
+// 	printf("%d", ft_strcmp(a, c));
+// 	return (0);
+// }
