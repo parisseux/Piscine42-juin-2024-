@@ -1,0 +1,46 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_recursive_factorial.c                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/01 12:03:27 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/07/01 12:11:54 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+// #include <unistd.h>
+
+// void	ft_putnbr(int nb)
+// {
+// 	if (nb > 9)
+// 	{
+// 		ft_putnbr(nb / 10);
+// 		nb = nb % 10;
+// 	}
+// 	if (nb >= 0 && nb <= 9)
+// 	{
+// 		nb = nb + '0';
+// 		write (1, &nb, 1);
+// 	}
+// }
+
+int	ft_recursive_factorial(int nb)
+{
+	int	res;
+
+	if (nb < 0)
+		return (0);
+	if (nb <= 1)
+		res = 1;
+	if (nb > 1)
+		res = (nb * ft_recursive_factorial(nb - 1));
+	return (res);
+}
+
+// int	main(void)
+// {
+// 	ft_putnbr(ft_recursive_factorial(9));
+// 	return (0);
+// }
