@@ -1,0 +1,38 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/07 14:19:02 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/07/07 14:25:57 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+char	*ft_strncpy(char *dest, char *str, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	while (str[i] && i < n)
+	{
+		dest[i] = str[i];
+		i++;
+	}
+	while (i < n)
+	{
+		dest[i] = '\0';
+		i++;
+	}
+	return (dest);
+}
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char str[] = "lalala";
+// 	char dest[20];
+// 	printf("%s", ft_strncpy(dest, str, 2));
+// 	return (0);
+// }
