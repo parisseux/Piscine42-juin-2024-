@@ -1,0 +1,49 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/25 16:18:26 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/06/25 19:32:35 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
+int	ft_strncmp(char *s1, char *s2, unsigned int n)
+{
+	unsigned int	i;
+
+	i = 0;
+	if (n == 0)
+		return (0);
+	while (s1[i] && s2[i] && i < n)
+	{
+		if (s1[i] != s2[i])
+			return (s1[i] - s2[i]);
+		i++;
+	}
+	if (i != n)
+		return (s1[i] - s2[i]);
+	return (0);
+}
+
+// int	main(void)
+// {
+// 	char a[] = "abcdfgtrbrft";
+// 	char b[] = "acbdgtfgrtgt";
+// 	char c[] = "abcdfft";
+// 	int size = 6;
+
+// 	printf("%d", strncmp(a, b, size));
+// 	printf("\n");
+// 	printf("%d", strncmp(a, c, size));
+// 	printf("\n");
+// 	printf("%d", ft_strncmp(a, b, size));
+// 	printf("\n");
+// 	printf("%d", ft_strncmp(a, c, size));
+// 	return (0);
+// }
