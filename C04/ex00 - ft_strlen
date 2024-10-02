@@ -1,0 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/26 18:56:44 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/06/26 19:06:05 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+
+int	ft_strlen(char *str)
+{
+	int	i;
+	int	size;
+
+	i = 0;
+	while (str[i])
+		i++;
+	size = i;
+	return (size);
+}
+// int	main(void)
+// {
+// 	char a[] = "miaou miaou";
+// 	char b[] = "";
+// 	printf("%d", ft_strlen(a));
+// 	printf("%c", '\n');
+// 	printf("%d", ft_strlen(b));
+// 	return (0);
+// }
