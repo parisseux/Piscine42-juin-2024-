@@ -1,0 +1,43 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/06/25 20:49:18 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/06/25 21:03:04 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdio.h>
+#include <string.h>
+
+char	*ft_strncat(char *dest, char *src, unsigned int nb)
+{
+	unsigned int	i;
+	unsigned int	j;
+
+	i = 0;
+	j = 0;
+	while (dest[j])
+		j++;
+	while (src[i] && i < nb)
+	{	
+		dest[j] = src[i];
+		i++;
+		j++;
+	}
+	dest[j] = '\0';
+	return (dest);
+}
+// int main(void)
+// {
+//     char	c[]= "abbbb";
+//     char	d[]= "cd";
+// 	int	n = 7;
+
+// //	printf("%s", strncat(c,d,n));
+//     printf("%s", ft_strncat(c,d,n));
+//     return (0);
+// }
