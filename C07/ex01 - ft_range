@@ -1,0 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_range.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/03 11:31:24 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/07/03 15:35:48 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+int	*ft_range(int min, int max)
+{
+	int	size;
+	int	*tab;
+	int	i;
+
+	i = 0;
+	size = max - min;
+	if (size <= 0)
+		return (NULL);
+	tab = (int *)malloc(size * sizeof(int));
+	if (tab == NULL)
+		return (NULL);
+	while (i < size)
+	{
+		tab[i] = min;
+		min ++;
+		i++;
+	}
+	return (tab);
+}
+// #include <stdio.h>
+// int main(void)
+// {
+// 	int min = -5;
+// 	int max = 5;
+// 	int *tab = ft_range(min,  max);
+// 	int i = 0;
+// 	int size = max - min;
+
+// 	while (i < size)
+// 	{
+// 		printf("%d ", tab[i]);
+// 		i++;		
+// 	}
+// 	printf("\n");
+// 	free (tab);
+// 	return (0);
+// }
