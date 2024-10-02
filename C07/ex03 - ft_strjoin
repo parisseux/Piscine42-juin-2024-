@@ -1,0 +1,79 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: pchatagn <pchatagn@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/07/03 14:55:01 by pchatagn          #+#    #+#             */
+/*   Updated: 2024/07/09 15:55:06 by pchatagn         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <stdlib.h>
+
+int	ft_size(int size, char **strs, char *sep)
+{
+	int	k;
+	int	count;
+	int	i;
+	int	j;
+	int	m;
+
+	k = 0;
+	i = 0;
+	m = 0;
+	while (sep[k])
+		k++;
+	while (i < size)
+	{
+		j = 0;
+		while (strs[i][j])
+		{
+			j++;
+			m++;
+		}
+		m--;
+		i++;
+	}
+	count = ((k * (size - 1)) + m);
+	return (count);
+}C0C
+
+char	*ft_strjoin(int size, char **strs, char *sep)
+{
+	char	*str;
+	int		i;
+	int		j;
+	int		k;
+
+	i = 0;
+	k = 0;
+	j = ft_size(size, strs, sep);
+	str = (char *)malloc((j + 1) * sizeof(char));
+	if (!str)
+		return (NULL);
+	if (size == 0)
+		return (str);
+	while (i < size)
+	{
+		j = 0;
+		while (strs[i][j])
+			str[k++] = strs[i][j++];
+		j = 0;
+		while (sep[j] && i < (size - 1))
+			str[k++] = sep[j++];
+		i++;
+	}
+	str[k] = '\0';
+	return (str);
+}
+
+// #include <stdio.h>
+// int main(void)
+// {
+// 	char *strs[] = { "Tu", "vas", "y", "arriver", "!"};
+// 	char *sep = "❤️";
+// 	printf("%s\n", ft_strjoin(5, strs, sep));
+// 	return (0);
+// }
